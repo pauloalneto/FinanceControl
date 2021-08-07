@@ -1,0 +1,18 @@
+<p>flag works! TEste</p>
+
+<section *ngIf="showGrid == true">
+  <table>
+    <thead>
+      <tr>
+        <th>Código</th>
+        <th>Nome</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of gridFlags">
+        <td>{{item.flagId}}</td>
+        <td>{{item.name}}</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
