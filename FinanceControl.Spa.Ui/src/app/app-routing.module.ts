@@ -1,15 +1,14 @@
+import { ModuleWithProviders } from '@angular/compiler/src/core';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { FlagComponent } from './main/flag/flag.component';
 import { MainComponent } from './main/main.component';
 
 const routes: Routes = [
-  { path: '', component: MainComponent },
-  { path: 'flag', component: FlagComponent }
+  {
+    path: '', component: MainComponent, data: { title: "Main" }, children: [
+      { path: 'flag', loadChildren: () => import('./main/flag/flag.module').then(m => m.FlagModule)}
+    ]
+  }
 ];
 
-@NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
-})
-export class AppRoutingModule { }
+export const RoutingDefault: ModuleWithProviders = RouterModule.forRoot(routes)

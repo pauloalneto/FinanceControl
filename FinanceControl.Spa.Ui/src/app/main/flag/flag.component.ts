@@ -14,6 +14,7 @@ export class FlagComponent implements OnInit {
   constructor(private flagService: FlagService) { }
 
   ngOnInit(): void {
+    console.log('componente iniciado')
     this.flagService.get().subscribe(result => {
       this.gridFlags = result;
       console.log('Flag service result: ', result, this.gridFlags)

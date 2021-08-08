@@ -1,0 +1,21 @@
+body {
+  margin: 0px;
+  padding: 0px;
+}
+
+.wrapper {
+  display: flex;
+  height: 100vh;
+
+  .sider-header {
+    min-width: 50px;
+    width: calc((100vw - 100%) + 200px);
+    background-color: $dark-gray;
+    color: $font-color;
+  }
+
+  .content-main {
+    flex-grow: 1;
+    overflow: auto;
+  }
+}

@@ -5,6 +5,8 @@ import { FlagService } from './flag.service';
 import { ApiService } from '../../common/service/api.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonSharedModule } from '../../common/common-shared.module';
+import { UtilsModule } from '../../utils/utils.module';
+import { FlagRoutingModule } from './flag.routing.module';
 
 
 
@@ -15,6 +17,8 @@ import { CommonSharedModule } from '../../common/common-shared.module';
     FormsModule,
     ReactiveFormsModule,
     CommonSharedModule,
+    FlagRoutingModule,
+    UtilsModule
   ],
   providers: [FlagService, ApiService]
 })
