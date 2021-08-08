@@ -7,7 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
+  showFiller: boolean = false;
+
   constructor() { }
+
 
   ngOnInit(): void {
   }

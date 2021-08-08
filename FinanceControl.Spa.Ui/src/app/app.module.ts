@@ -11,6 +11,7 @@ import { ApiService } from './common/service/api.service';
 import { FlagModule } from './main/flag/flag.module';
 import { MainComponent } from './main/main.component';
 import { UtilsModule } from './utils/utils.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { UtilsModule } from './utils/utils.module';
     HttpClientModule,
     RoutingDefault,
     UtilsModule,
+    BrowserAnimationsModule,
   ],
   providers: [
     HttpClientModule,

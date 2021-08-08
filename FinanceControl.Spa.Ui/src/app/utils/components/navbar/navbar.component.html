@@ -1,4 +1,22 @@
-<a class="navbar-brand" href="#">Finance Control</a>
+<mat-drawer-container class="example-container" autosize>
+  <mat-drawer #drawer class="example-sidenav" mode="side">
+    <p>Auto-resizing sidenav</p>
+    <button (click)="showFiller = !showFiller" mat-raised-button>
+      Toggle extra text
+    </button>
+    <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
+  </mat-drawer>
+
+  <div class="example-sidenav-content">
+    <button type="button" mat-button (click)="drawer.toggle()">
+      Toggle sidenav
+    </button>
+  </div>
+
+</mat-drawer-container>
+
+
+<!--<a class="navbar-brand" href="#">Finance Control</a>
 <nav class="navbar">
   <ul class="nav nav-pills flex-column">
     <li class="nav-item">
@@ -19,4 +37,4 @@
       </ul>
     </li>
   </ul>
-</nav>
+</nav>-->
