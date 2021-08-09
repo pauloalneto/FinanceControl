@@ -1,11 +1,10 @@
-<app-navbar></app-navbar>
-
-<!--<div class="wrapper">
-  <div class="sider-header">
+<mat-sidenav-container class="wrapper">
+  <mat-sidenav #sidenav opened mode="side">
     <app-navbar></app-navbar>
-  </div>
+  </mat-sidenav>
 
-  <div class="content-main">-->
+  <mat-sidenav-content class="container-main">
+    <app-header-custom (open)="sidenav.toggle()"></app-header-custom>
     <router-outlet></router-outlet>
-  <!--</div>
-</div>-->
+  </mat-sidenav-content>
+</mat-sidenav-container>

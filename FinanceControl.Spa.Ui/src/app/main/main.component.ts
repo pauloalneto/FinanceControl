@@ -12,4 +12,9 @@ export class MainComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  openSideNav(event: any) {
+    console.log('testeclick ', event)
+  }
+
+
 }
