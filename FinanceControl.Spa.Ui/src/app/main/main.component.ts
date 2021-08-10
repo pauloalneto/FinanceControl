@@ -7,9 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainComponent implements OnInit {
 
+  menu: any = [];
+
   constructor() { }
 
   ngOnInit(): void {
+
+    this.menu = [
+      { icon: 'bi-bar-chart', route: '/', title: 'Dashboard' },
+      { icon: 'bi-clipboard-data', route: '/', title: 'Report' },
+      { icon: 'bi-credit-card', route: '/', title: 'Cards' },
+      { icon: 'bi-currency-dollar', route: '/', title: 'Invoice' },
+    ]
+
   }
 
   openSideNav(event: any) {

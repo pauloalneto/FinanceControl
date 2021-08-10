@@ -1,5 +1,10 @@
 
-<p>Teste</p>
+  <a class="navbar-brand" href="#">Finance Control</a>
+  <ul class="nav flex-column">
+    <li *ngFor="let item of menu" class="nav-item">
+      <a class="nav-link" [routerLink]="[item.route]"><i class="bi {{item.icon}}"></i> {{item.title}}</a>
+    </li>
+  </ul>
 
   <!--<mat-sidenav #sidenav opened mode="side" class="bg-dark sider-nav">
     Sidenav content

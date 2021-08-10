@@ -1,0 +1,52 @@
+h1, h2, h3, h4, h5 {
+
+}
+
+a {
+  color: $font-color;
+  cursor: pointer;
+
+  &:hover, &:focus, &:active {
+    color: $font-color;
+  }
+}
+
+.text {
+  &-xs {
+    font-size: $font-xs;
+  }
+
+  &-sm {
+    font-size: $font-sm;
+  }
+
+  &-df {
+    font-size: $font-df;
+  }
+
+  &-lg {
+    font-size: $font-lg;
+  }
+
+  &-xl {
+    font-size: $font-xl;
+  }
+
+  &-success {
+    color: $green !important;
+  }
+
+  &-warning {
+    color: $warning !important;
+  }
+
+  &-danger, &-primary {
+    color: $danger !important;
+  }
+}
+
+.font {
+  &-regular {
+
+  }
+}

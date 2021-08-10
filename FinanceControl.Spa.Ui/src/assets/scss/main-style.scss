@@ -2,7 +2,6 @@
 // Import bootstrap
 @import "variables.scss";
 @import "global.scss";
-@import "components/components.scss";
 
 
 @import "node_modules/bootstrap/scss/bootstrap.scss";
@@ -10,3 +9,6 @@
 @import "node_modules/bootstrap/scss/functions";
 @import "node_modules/bootstrap/scss/variables";
 
+@import "Typograph.scss";
+@import "bootstrap/bootstrap.scss";
+@import "components/components.scss";

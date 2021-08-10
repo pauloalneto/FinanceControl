@@ -7,6 +7,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatTableModule } from '@angular/material/table';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -17,6 +18,7 @@ import { MatTableModule } from '@angular/material/table';
   ],
   imports: [
     CommonModule,
+    RouterModule,
     MatSidenavModule,
     MatTableModule,
   ],

@@ -1,0 +1,14 @@
+.nav {
+  color: white;
+
+  &-item {
+
+    :hover {
+      background-color: $primary;
+    }
+  }
+}
+
+.nav-link:hover, .nav-link:focus {
+  color: $font-color;
+}
