@@ -1,18 +1,39 @@
 
-  <a class="navbar-brand" href="#">Finance Control</a>
-  <ul class="nav flex-column">
-    <li *ngFor="let item of menu" class="nav-item">
-      <a class="nav-link" [routerLink]="[item.route]"><i class="bi {{item.icon}}"></i> {{item.title}}</a>
-    </li>
-  </ul>
+<a class="navbar-brand" href="#">Finance Control</a>
+<ul class="nav flex-column">
+  <li *ngFor="let item of menu" class="nav-item">
+    <a class="nav-link" [routerLink]="[item.route]"><i class="bi {{item.icon}}"></i> {{item.title}}</a>
+  </li>
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#navbarId" role="button" data-bs-toggle="collapse" aria-expanded="false">
+      Dropdown
+    </a>
+    <ul class="collapse" id="navbarId">
+      <li class="nav-item"><a class="nav-link" href="#">Action</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">Action</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">Action</a></li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a href="#myNavbar" class="nav-link dropdown-toggle" data-bs-toggle="collapse">Teste</a>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav flex-column">
+        <li class="nav-item"><a class="nav-link" href="#">Action</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Another action</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Something else here</a></li>
+      </ul>
 
-  <!--<mat-sidenav #sidenav opened mode="side" class="bg-dark sider-nav">
-    Sidenav content
-  </mat-sidenav>-->
+    </div>
+</li>
+  <li><a class="nav-item" href="#">Action</a></li>
+  <li><a class="nav-item" href="#">Action</a></li>
+  <li><a class="nav-item" href="#">Action</a></li>
+  <li><a class="nav-item" href="#">Action</a></li>
+</ul>
 
-
-
-
+<!--<mat-sidenav #sidenav opened mode="side" class="bg-dark sider-nav">
+  Sidenav content
+</mat-sidenav>-->
 <!--<a class="navbar-brand" href="#">Finance Control</a>
 <nav class="navbar">
   <ul class="nav nav-pills flex-column">

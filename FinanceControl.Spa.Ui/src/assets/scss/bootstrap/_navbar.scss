@@ -3,12 +3,13 @@
 
   &-item {
 
-    :hover {
-      background-color: $primary;
-    }
   }
 }
 
-.nav-link:hover, .nav-link:focus {
+.nav-link:hover {
   color: $font-color;
+
+
+    background-color: $primary;
+
 }

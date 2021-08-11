@@ -14,10 +14,23 @@ export class MainComponent implements OnInit {
   ngOnInit(): void {
 
     this.menu = [
-      { icon: 'bi-bar-chart', route: '/', title: 'Dashboard' },
+      {
+        icon: 'bi-bar-chart', route: '/', title: 'Dashboard', children:
+          [
+            { icon: 'bi-clipboard-chart', route: '/', title: 'Dashboard' },
+            { icon: 'bi-clipboard-chart', route: '/', title: 'Dashboard' },
+            { icon: 'bi-clipboard-chart', route: '/', title: 'Dashboard' },
+          ]
+      },
       { icon: 'bi-clipboard-data', route: '/', title: 'Report' },
       { icon: 'bi-credit-card', route: '/', title: 'Cards' },
-      { icon: 'bi-currency-dollar', route: '/', title: 'Invoice' },
+      {
+        icon: 'bi-currency-dollar', route: '/', title: 'Invoice', children:
+          [
+            { icon: 'bi-clipboard-chart', route: '/', title: 'Dashboard' },
+            { icon: 'bi-clipboard-chart', route: '/', title: 'Dashboard' },
+            { icon: 'bi-clipboard-chart', route: '/', title: 'Dashboard' },
+          ] },
     ]
 
   }
