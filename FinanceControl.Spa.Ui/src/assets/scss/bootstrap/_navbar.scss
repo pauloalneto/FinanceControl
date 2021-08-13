@@ -1,15 +1,46 @@
 .nav {
-  color: white;
 
-  &-item {
-
+  i {
+    margin: 10px;
+    font-size: 1.2em;
+    opacity: 0.65;
   }
 }
 
-.nav-link:hover {
-  color: $font-color;
+.nav-link {
+  color: #d3d3d3;
 
+  &-subitem {
+    padding-left: 60px;
+  }
 
+  &:hover {
+    color: #030303;
     background-color: $primary;
+  }
 
+  &:focus {
+    color: #030303;
+  }
+
+  &:not(:hover):focus {
+    color: #d3d3d3;
+  }
+
+  &-open {
+    background-color: #1c2126;
+  }
+}
+
+.navbar {
+  &-collapse-items {
+    background-color: #1c2126;
+  }
+}
+
+.brand {
+  display: flex;
+  flex: 0 0 56px;
+  align-items: center;
+  justify-content: center;
 }

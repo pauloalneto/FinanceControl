@@ -1,58 +1,19 @@
 
-<a class="navbar-brand" href="#">Finance Control</a>
 <ul class="nav flex-column">
-  <li *ngFor="let item of menu" class="nav-item">
-    <a class="nav-link" [routerLink]="[item.route]"><i class="bi {{item.icon}}"></i> {{item.title}}</a>
-  </li>
-  <li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle" href="#navbarId" role="button" data-bs-toggle="collapse" aria-expanded="false">
-      Dropdown
+  <div class="brand">
+    <a class="navbar-brand" href="#">Finance Control</a>
+  </div>
+  <li *ngFor="let item of menu; let i=index" class="nav-item">
+    <a *ngIf="!item.children" class="nav-link" [routerLink]="[item.route]"><i class="bi {{item.icon}}"></i> {{item.title}}</a>
+
+    <a #htmlMenu [id]="'menu_' + i" *ngIf="item.children" [href]="'#submenu_' + i" class="nav-link dropdown-toggle nav-link-toggle" (click)="toggleMenu(i)"
+       [ngClass]="{'navbar-collapse-items' : isOpen}" aria-expanded="false" data-bs-toggle="collapse">
+      <i class="bi {{item.icon}}"></i> {{item.title}}
     </a>
-    <ul class="collapse" id="navbarId">
-      <li class="nav-item"><a class="nav-link" href="#">Action</a></li>
-      <li class="nav-item"><a class="nav-link" href="#">Action</a></li>
-      <li class="nav-item"><a class="nav-link" href="#">Action</a></li>
-    </ul>
-  </li>
-  <li class="dropdown">
-    <a href="#myNavbar" class="nav-link dropdown-toggle" data-bs-toggle="collapse">Teste</a>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav flex-column">
-        <li class="nav-item"><a class="nav-link" href="#">Action</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Another action</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Something else here</a></li>
+    <div class="collapse navbar-collapse nav-link-toggle" [id]="'submenu_' + i">
+      <ul class="nav flex-column navbar-collapse-items">
+        <li *ngFor="let children of item.children" class="nav-item"><a class="nav-link nav-link-subitem" href="#">{{item.title}}</a></li>
       </ul>
 
     </div>
-</li>
-  <li><a class="nav-item" href="#">Action</a></li>
-  <li><a class="nav-item" href="#">Action</a></li>
-  <li><a class="nav-item" href="#">Action</a></li>
-  <li><a class="nav-item" href="#">Action</a></li>
 </ul>
-
-<!--<mat-sidenav #sidenav opened mode="side" class="bg-dark sider-nav">
-  Sidenav content
-</mat-sidenav>-->
-<!--<a class="navbar-brand" href="#">Finance Control</a>
-<nav class="navbar">
-  <ul class="nav nav-pills flex-column">
-    <li class="nav-item">
-      <a class="nav-link" aria-current="page" href="#">Home</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Link</a>
-    </li>
-    <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-        Dropdown
-      </a>
-      <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-        <li><a class="dropdown-item" href="#">Action</a></li>
-        <li><a class="dropdown-item" href="#">Another action</a></li>
-        <li><hr class="dropdown-divider"></li>
-        <li><a class="dropdown-item" href="#">Something else here</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>-->
