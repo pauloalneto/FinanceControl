@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-main',
@@ -9,29 +11,38 @@ export class MainComponent implements OnInit {
 
   menu: any = [];
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
-
     this.menu = [
+      { icon: 'bi-bar-chart', route: '/', title: 'Dashboard'},
       {
-        icon: 'bi-bar-chart', route: '/', title: 'Dashboard', children:
+        icon: 'bi-clipboard-data', route: '/', title: 'Reports', children:
           [
-            { icon: 'bi-clipboard-chart', route: '/', title: 'Dashboard' },
-            { icon: 'bi-clipboard-chart', route: '/', title: 'Dashboard' },
-            { icon: 'bi-clipboard-chart', route: '/', title: 'Dashboard' },
+            {icon: '', route: '/', title: 'Invoice'}
           ]
       },
-      { icon: 'bi-clipboard-data', route: '/', title: 'Report' },
       { icon: 'bi-credit-card', route: '/', title: 'Cards' },
+      { icon: 'bi-currency-dollar', route: '/', title: 'Invoices'},
       {
-        icon: 'bi-currency-dollar', route: '/', title: 'Invoice', children:
+        icon: 'bi-gear', route: '/', title: 'Settings', children:
           [
-            { icon: 'bi-clipboard-chart', route: '/', title: 'Dashboard' },
-            { icon: 'bi-clipboard-chart', route: '/', title: 'Dashboard' },
-            { icon: 'bi-clipboard-chart', route: '/', title: 'Dashboard' },
-          ] },
+            { icon: '', route: '/flag', title: 'Flags' },
+            { icon: '', route: '/', title: 'Invoice Status' },
+          ]
+      },
     ]
+
+    this.router.events
+      .pipe(
+        // Filter the NavigationEnd events as the breadcrumb is updated only when the route reaches its end 
+        filter((event) => event instanceof NavigationEnd)
+      )
+      .subscribe((event) => {
+        // Construct the breadcrumb hierarchy 
+        const root = this.router.routerState.snapshot.root;
+        console.log(root)
+      });
 
   }
 

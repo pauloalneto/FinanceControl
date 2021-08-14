@@ -8,13 +8,15 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatTableModule } from '@angular/material/table';
 import { RouterModule } from '@angular/router';
+import { BreadcrumpCustomComponent } from './components/breadcrump-custom/breadcrump-custom.component';
 
 
 
 @NgModule({
   declarations: [
     HeaderCustomComponent,
-    NavbarComponent
+    NavbarComponent,
+    BreadcrumpCustomComponent
   ],
   imports: [
     CommonModule,
@@ -24,7 +26,8 @@ import { RouterModule } from '@angular/router';
   ],
   exports: [
     HeaderCustomComponent,
-    NavbarComponent
+    NavbarComponent,
+    BreadcrumpCustomComponent
   ]
 })
 export class UtilsModule { }

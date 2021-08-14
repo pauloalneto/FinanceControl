@@ -4,11 +4,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { MainComponent } from './main/main.component';
 
 const routes: Routes = [
+  { path: '', component: MainComponent, data: { title: "Main" } },
   {
-    path: '', component: MainComponent, data: { title: "Main" }, children: [
-      { path: 'flag', loadChildren: () => import('./main/flag/flag.module').then(m => m.FlagModule)}
+    path: '', component: MainComponent, data: { breadcrumb: 'Home' }, children: [
+      { path: 'flag', loadChildren: () => import('./main/flag/flag.module').then(m => m.FlagModule), data: { breadcrump: 'Flag' } }
     ]
   }
-];
+  ];
 
 export const RoutingDefault: ModuleWithProviders = RouterModule.forRoot(routes)

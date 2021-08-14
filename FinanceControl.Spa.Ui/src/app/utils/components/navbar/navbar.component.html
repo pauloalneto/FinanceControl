@@ -12,7 +12,7 @@
     </a>
     <div class="collapse navbar-collapse nav-link-toggle" [id]="'submenu_' + i">
       <ul class="nav flex-column navbar-collapse-items">
-        <li *ngFor="let children of item.children" class="nav-item"><a class="nav-link nav-link-subitem" href="#">{{item.title}}</a></li>
+        <li *ngFor="let children of item.children" class="nav-item"><a class="nav-link nav-link-subitem" [routerLink]="[children.route]">{{children.title}}</a></li>
       </ul>
 
     </div>
