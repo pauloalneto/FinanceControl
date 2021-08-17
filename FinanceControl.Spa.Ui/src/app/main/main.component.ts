@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavigationEnd, Router } from '@angular/router';
+import { ActivatedRoute, ActivationEnd, NavigationEnd, RouteConfigLoadEnd, RouteConfigLoadStart, Router, RouterEvent } from '@angular/router';
 import { filter } from 'rxjs/operators';
 
 @Component({
@@ -9,21 +9,44 @@ import { filter } from 'rxjs/operators';
 })
 export class MainComponent implements OnInit {
 
+  loading: boolean;
   menu: any = [];
 
-  constructor(private router: Router) { }
+  constructor(private activatedRoute: ActivatedRoute, private router: Router) {
+    this.loading = false;
 
-  ngOnInit(): void {
+    //router.events.pipe(
+    //  filter((event) => event instanceof RouterEvent)
+    //).subscribe(event => {
+    //  if (event instanceof RouteConfigLoadStart) {
+    //    this.loading = true;
+    //    console.log(true);
+    //  } else if (event instanceof RouteConfigLoadEnd) {
+    //    this.loading = false;
+    //    console.log(false);
+    //  }
+    //})
+
+    this.router.events.subscribe(event => {
+      if (event instanceof ActivationEnd) {
+        this.loading = true;
+        console.log(true);
+      } else if (event instanceof NavigationEnd) {
+        this.loading = false;
+        console.log(false);
+      }
+    })
+
     this.menu = [
-      { icon: 'bi-bar-chart', route: '/', title: 'Dashboard'},
+      { icon: 'bi-bar-chart', route: '/dashboard', title: 'Dashboard' },
       {
         icon: 'bi-clipboard-data', route: '/', title: 'Reports', children:
           [
-            {icon: '', route: '/', title: 'Invoice'}
+            { icon: '', route: '/', title: 'Invoice' }
           ]
       },
       { icon: 'bi-credit-card', route: '/', title: 'Cards' },
-      { icon: 'bi-currency-dollar', route: '/', title: 'Invoices'},
+      { icon: 'bi-currency-dollar', route: '/', title: 'Invoices' },
       {
         icon: 'bi-gear', route: '/', title: 'Settings', children:
           [
@@ -33,16 +56,9 @@ export class MainComponent implements OnInit {
       },
     ]
 
-    this.router.events
-      .pipe(
-        // Filter the NavigationEnd events as the breadcrumb is updated only when the route reaches its end 
-        filter((event) => event instanceof NavigationEnd)
-      )
-      .subscribe((event) => {
-        // Construct the breadcrumb hierarchy 
-        const root = this.router.routerState.snapshot.root;
-        console.log(root)
-      });
+  }
+
+  ngOnInit(): void {
 
   }
 

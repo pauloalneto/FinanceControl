@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { FlagService } from './flag.service';
 
 @Component({
@@ -12,13 +12,19 @@ export class FlagComponent implements OnInit {
   gridFlags: any;
   showGrid: boolean = false;
 
-  constructor(private flagService: FlagService) { }
+  constructor(private flagService: FlagService, private router: Router) { }
 
   ngOnInit(): void {
     this.flagService.get().subscribe(result => {
       this.gridFlags = result;
       this.showGrid = true;
     })
+
+  }
+
+
+  showEdit() {
+    this.router.navigate(['/flag/edit']);
   }
 
 }

@@ -8,7 +8,10 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatTableModule } from '@angular/material/table';
 import { RouterModule } from '@angular/router';
-import { BreadcrumpCustomComponent } from './components/breadcrump-custom/breadcrump-custom.component';
+import { BreadcrumbCustomComponent } from './components/breadcrumb-custom/breadcrumb-custom.component';
+import { LoadingComponent } from './components/loading/loading.component';
+import { LoadingInterceptor } from './components/loading/loadingInterceptor';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 
 
@@ -16,7 +19,8 @@ import { BreadcrumpCustomComponent } from './components/breadcrump-custom/breadc
   declarations: [
     HeaderCustomComponent,
     NavbarComponent,
-    BreadcrumpCustomComponent
+    BreadcrumbCustomComponent,
+    LoadingComponent
   ],
   imports: [
     CommonModule,
@@ -27,7 +31,9 @@ import { BreadcrumpCustomComponent } from './components/breadcrump-custom/breadc
   exports: [
     HeaderCustomComponent,
     NavbarComponent,
-    BreadcrumpCustomComponent
-  ]
+    BreadcrumbCustomComponent,
+    LoadingComponent
+  ],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true }]
 })
 export class UtilsModule { }

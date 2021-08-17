@@ -1,0 +1,30 @@
+.Loader {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  z-index: 999;
+  opacity: 1;
+  animation: fade 0.5s linear;
+
+
+  &.LoaderFullBackground::before {
+    content: "";
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.40);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0
+  }
+
+  100% {
+    opacity: 1
+  }
+}

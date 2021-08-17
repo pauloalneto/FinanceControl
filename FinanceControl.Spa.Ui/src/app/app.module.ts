@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
@@ -12,11 +12,13 @@ import { MainComponent } from './main/main.component';
 import { UtilsModule } from './utils/utils.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { DashboardComponent } from './main/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { FlagEditComponent } from './flag-edit/flag-edit.component';
 import { FlagComponent } from './flag.component';
 
 
@@ -7,7 +8,7 @@ import { FlagComponent } from './flag.component';
   imports: [
     RouterModule.forChild([
       { path: '', component: FlagComponent, data: { breadcrump: 'Flag', title: "Flag" } },
-      { path: 'flag', component: FlagComponent, data: { breadcrump: 'Flag2', title: "Flag" } }
+      { path: 'edit', component: FlagEditComponent, data: { breadcrump: 'Edit', title: "Flag" } }
     ])
   ],
   exports: [RouterModule]

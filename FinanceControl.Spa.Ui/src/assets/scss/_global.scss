@@ -4,9 +4,16 @@ body {
   height: 100%;
 }
 
-
-
 .wrapper {
-  height: 100vh;
-
+  position: absolute;
+  width: 100%;
+  top: 69px;
+  z-index: 1;
+  height: calc(100vh - 69px);
+  overflow: auto;
 }
+
+.container-main {
+  background-color: #F0F3F5;
+}
+

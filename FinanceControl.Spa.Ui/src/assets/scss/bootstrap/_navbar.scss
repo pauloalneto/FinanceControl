@@ -33,6 +33,9 @@
 }
 
 .navbar {
+  border-bottom: 0.1px solid;
+  border-color: rgba(28,33,38,0.3);
+
   &-collapse-items {
     background-color: #1c2126;
   }
