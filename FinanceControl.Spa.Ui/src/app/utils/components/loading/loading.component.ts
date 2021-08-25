@@ -18,7 +18,6 @@ export class LoadingComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log('loading')
     this.loadingService.loadingSubject.pipe(delay(0)).subscribe(loading => {
       this.loading = loading;
     })

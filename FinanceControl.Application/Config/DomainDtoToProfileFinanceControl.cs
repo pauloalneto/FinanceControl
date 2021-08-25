@@ -11,6 +11,7 @@ namespace FinanceControl.Application.Config
         public DomainDtoToProfileFinanceControl()
         {
             CreateMap(typeof(Flag), typeof(FlagDto)).ReverseMap();
+            CreateMap(typeof(User), typeof(UserDto)).ReverseMap();
         }
     }
 }

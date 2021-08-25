@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Text;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace FinanceControl.Data.Map.FlagMap
+namespace FinanceControl.Data.Map
 {
     public class FlagMap
     {

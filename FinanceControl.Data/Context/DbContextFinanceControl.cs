@@ -1,4 +1,4 @@
-﻿using FinanceControl.Data.Map.FlagMap;
+﻿using FinanceControl.Data.Map;
 using FinanceControl.Domain.Entity;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -16,6 +16,7 @@ namespace FinanceControl.Data.Context
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             new FlagMap(modelBuilder.Entity<Flag>());
+            new UserMap(modelBuilder.Entity<User>());
         }
     }
 }

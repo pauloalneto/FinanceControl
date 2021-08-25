@@ -19,6 +19,10 @@ namespace FinanceControl.Api
             services.AddScoped<IFlagApplicationService, FlagApplicationService>();
             services.AddScoped<IFlagService, FlagService>();
             services.AddScoped<IFlagRepository, FlagRepository>();
+
+            services.AddScoped<IUserApplicationService, UserApplicationService>();
+            services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IUserRepository, UserRepository>();
         }
     }
 }
