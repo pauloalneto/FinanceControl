@@ -7,8 +7,9 @@ import { MainComponent } from './main/main.component';
 const routes: Routes = [
   {
     path: '', component: MainComponent, children: [
+      { path: 'dashboard', component: DashboardComponent, data: { breadcrumb: 'Dashboard'} },
       { path: 'flag', loadChildren: () => import('./main/flag/flag.module').then(m => m.FlagModule) },
-      { path: 'dashboard', component: DashboardComponent, data: { breadcrumb: 'Dashboard'} }
+      { path: 'user', loadChildren: () => import('./main/user/user.module').then(m => m.UserModule) },
     ]
   },
   { path: '', redirectTo:'', pathMatch: 'full' }

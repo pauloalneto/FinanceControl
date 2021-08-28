@@ -26,6 +26,7 @@ export class MainComponent implements OnInit {
         icon: 'bi-gear', route: '/', title: 'Settings', children:
           [
             { icon: '', route: '/flag', title: 'Flags' },
+            { icon: '', route: '/user', title: 'Users' },
             { icon: '', route: '/', title: 'Invoice Status' },
           ]
       },

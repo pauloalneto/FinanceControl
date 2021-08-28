@@ -1,10 +1,10 @@
 <section class="container-fluid" *ngIf="showGrid == true">
   <div class="card">
-    <h5 class="card-header card-header-striped"><i class="bi bi-flag"></i> Flags</h5>
+    <h5 class="card-header card-header-striped"><i class="bi bi-people"></i> Users</h5>
     <div class="card-body">
       <section class="text-end">
         <button type="button" class="btn btn-sm btn-outline-warning"><i class="bi bi-reply"></i> Voltar</button>
-        <button type="button" class="btn btn-sm btn-danger ms-1" (click)="showEdit()"><i class="bi bi-plus"></i> Adicionar</button>
+        <button type="button" class="btn btn-sm btn-danger ms-1" ><i class="bi bi-plus"></i> Adicionar</button>
       </section>
 
 
@@ -15,16 +15,18 @@
             <th>Ações</th>
             <th>Código</th>
             <th>Nome</th>
+            <th>E-mail</th>
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let item of gridFlags">
+          <tr *ngFor="let item of gridUsers">
             <td>
               <button type="button" class="btn btn-sm btn-outline-secondary m-1" title="Editar usuário"><i class="bi bi-pencil-square"></i></button>
               <button type="button" class="btn btn-sm btn-outline-secondary m-1" title="Excluir usuário"><i class="bi bi-trash"></i></button>
             </td>
-            <td>{{item.flagId}}</td>
+            <td>{{item.userId}}</td>
             <td>{{item.name}}</td>
+            <td>{{item.email}}</td>
           </tr>
         </tbody>
       </table>
