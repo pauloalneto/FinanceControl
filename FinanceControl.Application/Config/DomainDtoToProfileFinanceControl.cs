@@ -12,6 +12,8 @@ namespace FinanceControl.Application.Config
         {
             CreateMap(typeof(Flag), typeof(FlagDto)).ReverseMap();
             CreateMap(typeof(User), typeof(UserDto)).ReverseMap();
+            CreateMap(typeof(Role), typeof(RoleDto)).ReverseMap();
+            CreateMap(typeof(UserRole), typeof(UserRoleDto)).ReverseMap();
         }
     }
 }

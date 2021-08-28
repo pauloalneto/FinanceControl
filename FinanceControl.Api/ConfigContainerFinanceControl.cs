@@ -23,6 +23,14 @@ namespace FinanceControl.Api
             services.AddScoped<IUserApplicationService, UserApplicationService>();
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IUserRepository, UserRepository>();
+
+            services.AddScoped<IRoleApplicationService, RoleApplicationService>();
+            services.AddScoped<IRoleService, RoleService>();
+            services.AddScoped<IRoleRepository, RoleRepository>();
+
+            services.AddScoped<IUserRoleApplicationService, UserRoleApplicationService>();
+            services.AddScoped<IUserRoleService, UserRoleService>();
+            services.AddScoped<IUserRoleRepository, UserRoleRepository>();
         }
     }
 }

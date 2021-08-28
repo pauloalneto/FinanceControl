@@ -17,6 +17,8 @@ namespace FinanceControl.Data.Context
         {
             new FlagMap(modelBuilder.Entity<Flag>());
             new UserMap(modelBuilder.Entity<User>());
+            new RoleMap(modelBuilder.Entity<Role>());
+            new UserRoleMap(modelBuilder.Entity<UserRole>());
         }
     }
 }

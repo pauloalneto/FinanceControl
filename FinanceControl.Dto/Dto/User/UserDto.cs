@@ -1,4 +1,5 @@
 ﻿using Common.Dto;
+using System.Collections.Generic;
 
 namespace FinanceControl.Dto.Dto
 {
@@ -9,5 +10,7 @@ namespace FinanceControl.Dto.Dto
         public virtual string Login { get; set; }
         public virtual string Password { get; set; }
         public virtual string Email { get; set; }
+
+        public virtual ICollection<UserRoleDto> CollectionUserRole { get; set; }
     }
 }

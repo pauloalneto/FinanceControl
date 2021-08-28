@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Microsoft.EntityFrameworkCore;
 
 namespace FinanceControl.Data.Repository
 {
@@ -18,7 +19,9 @@ namespace FinanceControl.Data.Repository
 
         public IQueryable<User> GetAllWithFilters()
         {
-            return this.GetAll();
+            var users = this.GetAll().Include(_ => _.CollectionUserRole).ThenInclude(_ => _.Role);
+
+            return users;
         }
     }
 }
