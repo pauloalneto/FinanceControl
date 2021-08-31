@@ -1,5 +1,7 @@
-﻿using Common.Domain.Base;
+﻿using Common.Domain;
+using Common.Domain.Base;
 using FinanceControl.Domain.Entity;
+using FinanceControl.Domain.Filter;
 using FinanceControl.Domain.Interface.Repository;
 using FinanceControl.Domain.Interface.Service;
 using System;
@@ -19,9 +21,9 @@ namespace FinanceControl.Domain.Service
             this.rep = rep;
         }
 
-        public virtual async Task<IEnumerable<Flag>> GetByFilters()
+        public virtual async Task<IEnumerable<Flag>> GetByFilters(FlagFilter filters)
         {
-            var result = this.rep.GetAllWithFilters();
+            var result = this.rep.GetAllWithFilters(filters);
             return await this.rep.ToListAsync(result);
         }
     }

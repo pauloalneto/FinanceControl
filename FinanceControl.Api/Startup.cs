@@ -40,6 +40,11 @@ namespace FinanceControl.Api
             services.AddAutoMapper(AutoMapperConfigFinanceControl.RegisterMappings());
 
             ConfigContainerFinanceControl.Config(services);
+
+            services.AddControllers().AddJsonOptions(options =>
+            {
+                options.JsonSerializerOptions.WriteIndented = true;
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -5,8 +5,8 @@ using System.Threading.Tasks;
 
 namespace Common.Domain.Interface
 {
-    public interface IServiceBase<T>
+    public interface IServiceBase<T, TF>
     {
-        Task<IEnumerable<T>> GetByFilters();
+        Task<IEnumerable<T>> GetByFilters(TF filters);
     }
 }

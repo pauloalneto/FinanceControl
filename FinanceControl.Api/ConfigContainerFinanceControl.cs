@@ -1,6 +1,8 @@
 ﻿using FinanceControl.Application.App;
 using FinanceControl.Application.Interfaces;
 using FinanceControl.Data.Repository;
+using FinanceControl.Domain.Entity;
+using FinanceControl.Domain.Filter;
 using FinanceControl.Domain.Interface.Repository;
 using FinanceControl.Domain.Interface.Service;
 using FinanceControl.Domain.Service;

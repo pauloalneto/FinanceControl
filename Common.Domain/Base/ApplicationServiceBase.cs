@@ -8,20 +8,22 @@ using System.Threading.Tasks;
 
 namespace Common.Domain.Base
 {
-    public abstract class ApplicationServiceBase<T, TD> where TD : class
+    public abstract class ApplicationServiceBase<T, TD, TF> 
+        where TF : class 
+        where TD : class
     {
-        protected readonly IServiceBase<T> servicebase;
+        protected readonly IServiceBase<T, TF> servicebase;
         protected readonly IMapper mapper;
 
-        public ApplicationServiceBase(IServiceBase<T> servicebase, IMapper mapper)
+        public ApplicationServiceBase(IServiceBase<T, TF> servicebase, IMapper mapper)
         {
             this.servicebase = servicebase;
             this.mapper = mapper;
         }
 
-        public virtual async Task<IEnumerable<TD>> GetByFilters()
+        public virtual async Task<IEnumerable<TD>> GetByFilters(FilterBase filters)
         {
-            var result = await this.servicebase.GetByFilters();
+            var result = await this.servicebase.GetByFilters(filters as TF);
 
             return this.MapperDomainToResult<TD>(result);
         }

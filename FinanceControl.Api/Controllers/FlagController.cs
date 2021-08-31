@@ -1,4 +1,5 @@
 ﻿using FinanceControl.Application.Interfaces;
+using FinanceControl.Domain.Filter;
 using FinanceControl.Dto.Dto;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -22,9 +23,9 @@ namespace FinanceControl.Api.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Get()
+        public async Task<IActionResult> Get([FromQuery] FlagFilter filters)
         {
-            var result = await this.app.GetByFilters();
+            var result = await this.app.GetByFilters(filters);
 
             if (!result.Any())
             {

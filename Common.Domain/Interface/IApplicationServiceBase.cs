@@ -7,6 +7,6 @@ namespace Common.Domain.Interface
 {
     public interface IApplicationServiceBase<T>
     {
-        Task<IEnumerable<T>> GetByFilters();
+        Task<IEnumerable<T>> GetByFilters(FilterBase filters);
     }
 }

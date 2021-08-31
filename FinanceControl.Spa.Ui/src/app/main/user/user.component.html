@@ -16,6 +16,7 @@
             <th>Código</th>
             <th>Nome</th>
             <th>E-mail</th>
+            <th>Perfil</th>
           </tr>
         </thead>
         <tbody>
@@ -27,6 +28,9 @@
             <td>{{item.userId}}</td>
             <td>{{item.name}}</td>
             <td>{{item.email}}</td>
+            <td *ngFor="let role of item.roles">
+              <span class="badge bg-info">{{role.name}}</span>
+            </td>
           </tr>
         </tbody>
       </table>

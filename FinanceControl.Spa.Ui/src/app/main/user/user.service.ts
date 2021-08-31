@@ -9,4 +9,8 @@ export class UserService {
   public get() {
     return this.api.setResource('user').get()
   }
+
+  public getDataCustom(filters?: any) {
+    return this.api.setResource('user').getDataCustom(filters);
+  }
 }

@@ -6,7 +6,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Common.Domain\Common.Domain.csproj" />
-    <ProjectReference Include="..\FinanceControl.Filter\FinanceControl.Domain.Filter.csproj" />
   </ItemGroup>
 
 </Project>

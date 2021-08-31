@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpRequest, HttpHandler, HttpEvent, HttpInterceptor, HttpResponse } from '@angular/common/http';
 import { catchError, map } from 'rxjs/operators'
 import { LoadingService } from './loading.service';
+import { throwError } from 'rxjs';
 
 
 
@@ -23,7 +24,7 @@ export class LoadingInterceptor implements HttpInterceptor {
         }),
         catchError((err, evt) => {
           this.loadingService.setLoading(false, request.url);
-          return evt
+          return throwError(err.message);
         })
       )
   }

@@ -1,7 +1,8 @@
 import { Injectable } from "@angular/core";
-import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { HttpClient, HttpHeaders, HttpParams } from "@angular/common/http";
 import { Observable, throwError } from "rxjs";
 import { finalize, map, catchError } from 'rxjs/operators';
+
 
 @Injectable()
 export class ApiService<T>{
@@ -18,8 +19,20 @@ export class ApiService<T>{
     return this.getBase(this.makeUrl());
   }
 
-  private getBase(url: string): Observable<any> {
-    return this.processResponse(this.http.get<any>(url, this.makeHeader()));
+  public getDataCustom(filters?: any): Observable<T> {
+    return this.getBaseCustom('GetDataCustom', filters)
+  }
+
+  private getBase(url: string, filters?: any): Observable<any> {
+    return this.processResponse(this.http.get<any>(url, this.makeOptions(filters)));
+  }
+
+  private getBaseCustom(method: string, filters?: any): Observable<T> {
+    if (filters == null)
+      filters = {};
+
+    filters.filterBehavior = method;
+    return this.getBase(this.makeUrl(), filters);
   }
 
   public setResource(resource: string) : ApiService<T> {
@@ -29,12 +42,30 @@ export class ApiService<T>{
     return this;
   }
 
-  private makeHeader() {
-    var httpOptions = {
-      headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  private makeOptions(filters?: any) {
+    var options = {
+      headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
     }
 
-    return httpOptions;
+    if (filters != null)
+      Object.assign(options, { params: this.makeParams(filters)})
+
+    return options;
+  }
+
+  private makeParams(filters: any) {
+    let params = new HttpParams();
+    if (filters != null) {
+      for (const key in filters) {
+        if (filters.hasOwnProperty(key))
+          params = params.set(key, filters[key])
+      }
+      return params;
+    }
+    else {
+      return params;
+    }
+
   }
 
   private makeUrl() {

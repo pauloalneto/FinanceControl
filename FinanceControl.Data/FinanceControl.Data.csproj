@@ -7,6 +7,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Common.Orm\Common.Orm.csproj" />
     <ProjectReference Include="..\FinanceControl.Domain\FinanceControl.Domain.csproj" />
+    <ProjectReference Include="..\FinanceControl.Filter\FinanceControl.Domain.Filter.csproj" />
   </ItemGroup>
 
 </Project>

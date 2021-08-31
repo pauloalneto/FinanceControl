@@ -15,7 +15,7 @@ export class UserComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.userService.get().subscribe(result => {
+    this.userService.getDataCustom().subscribe(result => {
       this.gridUsers = result;
       this.showGrid = true;
     })

@@ -16,6 +16,7 @@
     <ProjectReference Include="..\FinanceControl.Application\FinanceControl.Application.csproj" />
     <ProjectReference Include="..\FinanceControl.Data\FinanceControl.Data.csproj" />
     <ProjectReference Include="..\FinanceControl.Dto\FinanceControl.Dto.csproj" />
+    <ProjectReference Include="..\FinanceControl.Filter\FinanceControl.Domain.Filter.csproj" />
   </ItemGroup>
 
 
