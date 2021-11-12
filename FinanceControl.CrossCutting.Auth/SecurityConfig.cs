@@ -8,7 +8,8 @@ namespace FinanceControl.CrossCutting.Auth
     {
         public static string GetSecret()
         {
-            return "fedaf7d8863b48e197b9287d492b708e";
+            return "6301682b-f1a1-4222-9701-cfcaf2a72a9b";
+            
         }
     }
 }

@@ -7,13 +7,17 @@
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="10.1.1" />
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.18" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="3.1.19" />
     <PackageReference Include="Microsoft.AspNetCore.Cors" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Common.Api\Common.Api.csproj" />
     <ProjectReference Include="..\Common.Orm\Common.Orm.csproj" />
     <ProjectReference Include="..\FinanceControl.Application\FinanceControl.Application.csproj" />
+    <ProjectReference Include="..\FinanceControl.CrossCutting.Auth\FinanceControl.CrossCutting.Auth.csproj" />
     <ProjectReference Include="..\FinanceControl.Data\FinanceControl.Data.csproj" />
     <ProjectReference Include="..\FinanceControl.Dto\FinanceControl.Dto.csproj" />
     <ProjectReference Include="..\FinanceControl.Filter\FinanceControl.Domain.Filter.csproj" />

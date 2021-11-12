@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -7,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace FinanceControl.Api.Controllers
 {
+    [Authorize]
     [ApiController]
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
@@ -23,6 +25,7 @@ namespace FinanceControl.Api.Controllers
             _logger = logger;
         }
 
+        [Authorize(Policy = "CanReadAll")]
         [HttpGet]
         public IEnumerable<WeatherForecast> Get()
         {

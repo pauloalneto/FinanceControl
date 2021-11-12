@@ -1,4 +1,5 @@
-﻿using FinanceControl.Application.App;
+﻿using Common.Domain.Model;
+using FinanceControl.Application.App;
 using FinanceControl.Application.Interfaces;
 using FinanceControl.Data.Repository;
 using FinanceControl.Domain.Entity;
@@ -18,6 +19,8 @@ namespace FinanceControl.Api
     {
         public static void Config(IServiceCollection services)
         {
+            services.AddScoped<CurrentUser>();
+
             services.AddScoped<IFlagApplicationService, FlagApplicationService>();
             services.AddScoped<IFlagService, FlagService>();
             services.AddScoped<IFlagRepository, FlagRepository>();

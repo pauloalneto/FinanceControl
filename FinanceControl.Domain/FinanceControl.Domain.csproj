@@ -9,4 +9,8 @@
     <ProjectReference Include="..\FinanceControl.Filter\FinanceControl.Domain.Filter.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Validation\" />
+  </ItemGroup>
+
 </Project>

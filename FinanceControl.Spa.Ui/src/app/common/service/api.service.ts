@@ -37,18 +37,18 @@ export class ApiService<T>{
 
   public setResource(resource: string) : ApiService<T> {
     this._resource = resource;
-    this._apiDefault = 'https://localhost:44378/api';
+    this._apiDefault = 'https://localhost:44378/weatherForecast';
 
     return this;
   }
 
   private makeOptions(filters?: any) {
     var options = {
-      headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
+      headers: new HttpHeaders({ 'Content-Type': 'application/json', 'Authorization': "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiUGF1bG8hkjkjkjkgQWxtZWlkYSIsImVtYWlsIjoicGF1bG9fbWFjaGFkb19hQHlhaG9vLmNvbS5iciIsInJvbGUiOiJbXCJhZG1pbmlzdHJhdG9yXCJdIiwibmJmIjoxNjM0MDgyOTY0LCJleHAiOjE2MzQwOTAxNjQsImlhdCI6MTYzNDA4Mjk2NH0.WcADxRcl3ZJdrC5zgz5CPpHwQc80elT6onE54gvu45I" }),
     }
 
-    if (filters != null)
-      Object.assign(options, { params: this.makeParams(filters)})
+    //if (filters != null)
+    //  Object.assign(options, { params: this.makeParams(filters)})
 
     return options;
   }
@@ -69,7 +69,8 @@ export class ApiService<T>{
   }
 
   private makeUrl() {
-    var url = `${this._apiDefault}/${this._resource}`
+    /*   var url = `${this._apiDefault}/${this._resource}`*/
+    var url = `${this._apiDefault}`
     return url;
   }
 

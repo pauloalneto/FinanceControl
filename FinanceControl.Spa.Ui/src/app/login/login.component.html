@@ -1,0 +1,23 @@
+
+<section>
+  <img class="img-fluid" src="../../assets/images/background.jpg" alt="backgroun finance control" />
+
+  <div class="card">
+    <div class="d-flex">
+      <form [formGroup]="vm.form">
+        <div class="input-group input-group-lg">
+          <span class="input-group-text" id="inputGroup-sizing-lg">User Name</span>
+          <input [(ngModel)]="vm.model.userName" name="userName" formControlName="userName" type="text" class="form-control" />
+        </div>
+        <div class="input-group input-group-lg">
+          <span class="input-group-text" id="inputGroup-sizing-lg">Password</span>
+          <input [(ngModel)]="vm.model.password" name="password" formControlName="password" type="password" class="form-control" />
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+
+
+
