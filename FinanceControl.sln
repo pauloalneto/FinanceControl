@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31424.327
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinanceControl.Api", "FinanceControl.Api\FinanceControl.Api.csproj", "{606A3F53-436F-4FD2-9263-FD4201670C72}"
 EndProject
@@ -39,7 +39,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common.Dto", "Common.Dto\Co
 EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "FinanceControl.Spa.Ui", "FinanceControl.Spa.Ui\", "{12B4457E-951B-4198-8FE5-801DD3EF1FF8}"
 	ProjectSection(WebsiteProperties) = preProject
-		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
 		Debug.AspNetCompiler.VirtualPath = "/localhost_55665"
 		Debug.AspNetCompiler.PhysicalPath = "FinanceControl.Spa.Ui\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_55665\"
@@ -55,18 +55,17 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "FinanceControl.Spa.Ui", "Fi
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
 		VWDPort = "55665"
-		SlnRelativePath = "FinanceControl.Spa.Ui\"
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinanceControl.CrossCutting.Auth", "FinanceControl.CrossCutting.Auth\FinanceControl.CrossCutting.Auth.csproj", "{EFF1682C-4C9C-4556-8ED8-CCBF2A899B8D}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinanceControl.Sso.Api", "FinanceControl.Sso.Api\FinanceControl.Sso.Api.csproj", "{054F4C2D-1B1C-4CE8-A84A-22678568A47D}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinanceControl.Domain.Filter", "FinanceControl.Filter\FinanceControl.Domain.Filter.csproj", "{24CF8509-7591-4661-9503-8EB534ED2C92}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common.Api", "Common.Api\Common.Api.csproj", "{2F81A348-335A-44A5-BF71-879B31EAC956}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinanceControl.Domain.Enum", "FinanceControl.Domain.Enum\FinanceControl.Domain.Enum.csproj", "{C3548C39-D9AD-4F3A-8CAF-4D59D9726CE3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinanceControl.Domain.Enum", "FinanceControl.Domain.Enum\FinanceControl.Domain.Enum.csproj", "{C3548C39-D9AD-4F3A-8CAF-4D59D9726CE3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinanceControl.Sso.Api", "FinanceControl.Sso.Api\FinanceControl.Sso.Api.csproj", "{4944FA59-81AD-4ED2-9F70-F999F4F3C3C2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -114,10 +113,6 @@ Global
 		{EFF1682C-4C9C-4556-8ED8-CCBF2A899B8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EFF1682C-4C9C-4556-8ED8-CCBF2A899B8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EFF1682C-4C9C-4556-8ED8-CCBF2A899B8D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{054F4C2D-1B1C-4CE8-A84A-22678568A47D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{054F4C2D-1B1C-4CE8-A84A-22678568A47D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{054F4C2D-1B1C-4CE8-A84A-22678568A47D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{054F4C2D-1B1C-4CE8-A84A-22678568A47D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{24CF8509-7591-4661-9503-8EB534ED2C92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{24CF8509-7591-4661-9503-8EB534ED2C92}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{24CF8509-7591-4661-9503-8EB534ED2C92}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -130,6 +125,10 @@ Global
 		{C3548C39-D9AD-4F3A-8CAF-4D59D9726CE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C3548C39-D9AD-4F3A-8CAF-4D59D9726CE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C3548C39-D9AD-4F3A-8CAF-4D59D9726CE3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4944FA59-81AD-4ED2-9F70-F999F4F3C3C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4944FA59-81AD-4ED2-9F70-F999F4F3C3C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4944FA59-81AD-4ED2-9F70-F999F4F3C3C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4944FA59-81AD-4ED2-9F70-F999F4F3C3C2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -148,10 +147,10 @@ Global
 		{985081B4-57F8-476D-8EE5-0A8669EA53A7} = {990088EA-A385-4383-A566-12E5E544F8E4}
 		{12B4457E-951B-4198-8FE5-801DD3EF1FF8} = {EE6263CE-2E25-4E64-9358-907B8E408201}
 		{EFF1682C-4C9C-4556-8ED8-CCBF2A899B8D} = {7B94BB43-6DCC-4D82-8366-C7F88C4EE160}
-		{054F4C2D-1B1C-4CE8-A84A-22678568A47D} = {F9605CF5-0245-4900-BBA3-3BDD064500EC}
 		{24CF8509-7591-4661-9503-8EB534ED2C92} = {42AD018C-64FB-4526-B1F0-DEAED93BDEC4}
 		{2F81A348-335A-44A5-BF71-879B31EAC956} = {990088EA-A385-4383-A566-12E5E544F8E4}
 		{C3548C39-D9AD-4F3A-8CAF-4D59D9726CE3} = {42AD018C-64FB-4526-B1F0-DEAED93BDEC4}
+		{4944FA59-81AD-4ED2-9F70-F999F4F3C3C2} = {F9605CF5-0245-4900-BBA3-3BDD064500EC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5C2D9EFF-6D20-470E-A030-E497A8ED4F03}

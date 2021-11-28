@@ -1,9 +1,7 @@
 
-<section>
-  <img class="img-fluid" src="../../assets/images/background.jpg" alt="backgroun finance control" />
+<div class="login-img"></div>
 
-  <div class="card">
-    <div class="d-flex">
+  <div class="card w-25 position-absolute top-50 start-50">
       <form [formGroup]="vm.form">
         <div class="input-group input-group-lg">
           <span class="input-group-text" id="inputGroup-sizing-lg">User Name</span>
@@ -14,9 +12,8 @@
           <input [(ngModel)]="vm.model.password" name="password" formControlName="password" type="password" class="form-control" />
         </div>
       </form>
-    </div>
   </div>
-</section>
+
 
 
 
